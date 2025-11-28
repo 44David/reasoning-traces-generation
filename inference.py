@@ -1,31 +1,17 @@
 import json
-from vllm import LLM, SamplingParams
+# from vllm import LLM, SamplingParams
 from datasets import load_dataset
 from tqdm import tqdm 
 import sys
 
 def main():
 
-    if len(sys.argv[1]) > 1:
-        try:
-            ds = load_dataset(sys.argv[1])
-        except:
-            print("not a valid hf dataset, please enter author/dataset_name")
-            return
-    else:
-        print("must provide a hf dataset: author/dataset_name")
-        return
-        
-        
-    if len(sys.argv[2]) > 1:
-        samples_to_process = int(sys.argv[2])
-    else: 
-        print("must have a number of samples to process")
-        return
-            
-    if len(sys.argv[3]) > 1:
-        output_file = sys.argv[3]    
 
+    ds = load_dataset("qwedsacf/competition_math")
+            
+    samples_to_process = 12499
+    
+    output_file = "SCoTD-deepseek-math-v2"   
 
     llm = LLM(model="deepseek-ai/deepseek-math-7b-instruct")
 
