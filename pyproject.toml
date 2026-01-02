@@ -1,11 +1,13 @@
 [project]
-name = "vllm-ds-math-inference"
+name = "reasoning-traces-generation"
 version = "0.1.0"
-description = "Add your description here"
+description = "script to generate thinking traces for verifiable math reasoning "
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "accelerate>=1.12.0",
     "datasets>=4.4.1",
+    "torch>=2.9.0",
     "tqdm>=4.67.1",
-    "vllm>=0.11.2",
+    "transformers>=4.57.3",
 ]
