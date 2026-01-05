@@ -17,7 +17,7 @@ num_samples = len(ds['train'])
 output_file = "gsm8k-deepseek-traces.jsonl"
 
 # create data file if not already created
-with open(output_file, "w") as f:
+with open(output_file, "a") as f:
     pass
 
 
